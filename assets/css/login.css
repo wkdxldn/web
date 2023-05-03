@@ -1,0 +1,47 @@
+ 
+ 
+ * {margin: 0; padding: 0; box-sizing: border-box;} 
+ body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("back.png") no-repeat center;
+    background-size: cover;
+ }
+ body ::before {
+    content: "";
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, .7);
+
+
+
+
+}
+
+.login-form {position: relative; z-index: 2; }
+.login-form h1 { 
+    font-size:  32px; color: #fff;
+    text-align: center;
+}
+
+.int-area {width: 400px;}
+.int-area input{
+    width: 100%;
+    padding:20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color:#fff;
+    outline :none;
+}
+
+
+
+
+
+
+
+
+
