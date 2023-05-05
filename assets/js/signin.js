@@ -22,5 +22,10 @@ const firebaseConfig = {
   measurementId: "G-8WHX4K6MK8"
 };
 
+async function Push(){
+  let response = await fetch(`https://gotlife-fd3fa-default-rtdb.asia-southeast1.firebasedatabase.app/Login`);
+
+}
+
 
 

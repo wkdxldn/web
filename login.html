@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IEx`c=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/login.css" />
-    <script src="jquery-3.4.1.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/login01.css" />
+    <title>Login</title>
 </head>
 <body>
-    <section class="login-form">
-        <h1> logo design</h1>
-        <form action="">
-            <div class="int-area">
-                <input type="text" name="id" id="id"
-                autocomplete="off" required>
-                <label for="id"> USER NAME</label>
-            </div>
-            <div class="int-area">
-                <input type="password" name="pw" id="pw"
-                autocomplete="off" required>
-                <label for="pw"> PASSWORD</label>
-            </div>
-            <div class="btn-area">
-                <button type="submit" onkeydown="login()">LOGIN</button>
-            </div>
+    <div class="login-wrapper">
+        <h2>Login</h2>
+        <form method="post" action="#" id="login-form">
+            <input type="text" name="userName" placeholder="Email">
+            <input type="password" name="userPassword" placeholder="Password">
+            <label for="remember-check">
+                <input type="checkbox" id="remember-check">아이디 저장하기
+            </label>
+            <input type="submit" value="Login">
         </form>
-      
+    </div>
 </body>
 </html>
+
+
+
+
