@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Social Network</title>
+    <link rel="stylesheet" href="/assets/css/inter.css">
+  </head>
+  <body>
+    <header>
+      <h1>My Social Network</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Friends</a></li>
+          <li><a href="#">Messages</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <section id="profile">
+        <h2>My Profile</h2>
+        <img src="avatar.png" alt="My Avatar">
+        <p>Name: Jane Doe</p>
+        <p>Age: 25</p>
+        <p>Location: New York, NY</p>
+      </section>
+      
+      <section id="friends">
+        <h2>My Friends</h2>
+        <ul id="friend-list">
+          <li><a href="#">John Smith</a></li>
+          <li><a href="#">Mary Johnson</a></li>
+          <li><a href="#">David Lee</a></li>
+        </ul>
+        <form id="add-friend-form">
+          <label for="friend-name">Add Friend:</label>
+          <input type="text" id="friend-name" name="friend-name">
+          <button type="submit">Add</button>
+        </form>
+      </section>
+      
+      <section id="messages">
+        <h2>My Messages</h2>
+        <ul id="message-list">
+          <li><a href="#">From John Smith: Hi there!</a></li>
+          <li><a href="#">From Mary Johnson: How are you?</a></li>
+          <li><a href="#">From David Lee: Let's hang out this weekend!</a></li>
+        </ul>
+        <form id="send-message-form">
+          <label for="message">Send Message:</label>
+          <input type="text" id="message" name="message">
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; 2023 My Social Network</p>
+    </footer>
+    
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

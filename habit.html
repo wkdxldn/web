@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create a Habit</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/habit.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create a Habit</h1>
+      <form id="habit-form">
+        <label for="habit-name">Habit Name:</label>
+        <input type="text" id="habit-name" name="habit-name" required>
+        <label for="habit-description">Habit Description:</label>
+        <textarea id="habit-description" name="habit-description" required></textarea>
+        <label for="habit-frequency">Habit Frequency:</label>
+        <select id="habit-frequency" name="habit-frequency">
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+        <button type="submit">Create Habit</button>
+      </form>
+    </div>
+    <script src="assets/js/habit.js"></script>
+  </body>
+</html>

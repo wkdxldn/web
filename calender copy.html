@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Planner</title>
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 20px;
+		}
+		.form input[type="text"], .form textarea {
+			margin-top: 5px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+			width: 100%;
+			box-sizing: border-box;
+		}
+		.form input[type="submit"] {
+			margin-top: 10px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			background-color: #2196f3;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.list {
+			margin-top: 20px;
+			width: 100%;
+			box-sizing: border-box;
+			border-collapse: collapse;
+		}
+		.list td {
+			padding: 10px;
+			border: 1px solid #ddd;
+			text-align: left;
+			font-size: 16px;
+			vertical-align: top;
+		}
+		.list td:first-child {
+			width: 100px;
+			font-weight: bold;
+		}
+		.list td:nth-child(2) {
+			width: 200px;
+		}
+		.list td:last-child {
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Planner</h1>
+		<div class="form">
+			<h2>Add Event</h2>
+			<form id="event-form">
+				<label for="event-date">Date:</label>
+				<input type="date" id="event-date" name="date" required>
+				<label for="event-title">Title:</label>
+				<input type="text" id="event-title" name="title" required>
+				<label for="event-details">Details:</label>
+				<textarea id="event-details" name="details" rows="4"></textarea>
+				<input type="submit" value="Add Event">
+			</form>
+		</div>
+		<div class="list">
+			<h2>Event List</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Title</th>
+						<th>Details</th>
+					</tr>
+				</thead>
+				<tbody id="event-list">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script>
+		// Add event listener to form submission
+		document.getElementById("event-form").addEventListener("submit", function(event) {
+			event.preventDefault(); // prevent default form submission
+			var date = document.getElementById("event-date").value;
+			var title = document.getElementById("event-title").value;
+			var details = document.getElementById("event-details").value;
+
+			// Create a new table row for the event
+			var tableRow = document.createElement("tr");
+			var tableDataDate = document.createElement("td");
+			var tableDataTitle = document.createElement("td");
+			var tableDataDetails = document
