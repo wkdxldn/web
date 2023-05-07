@@ -37,14 +37,19 @@
                   appId: "1:802246162177:web:24804eaec8bca29bc30d00",
                   measurementId: "G-Z7D4CDWHWG"
                 };
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+                import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
                 document.getElementById('id').addEventListener('click', (event) =>{
                         event.preventDefault()
                         const id = document.getElementById('id').value;
                         const password = document.getElementById('password').value;
                         const auth = getAuth();
                         signInAnonymously(auth, id, password)
-                                .then(() => {
+                                .then((UserCredential) => {
                                 // Signed in..
+                                const id=UserCredential.user;
                         })
                         .catch((error) => {
                                 alert('이미 있는 아이디');
@@ -53,12 +58,11 @@
                                 // ...
                         });  
                 })
-              
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-                import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
      
         </script>
 </body>
 </html>
+
+     
+       
+
