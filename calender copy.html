@@ -90,15 +90,23 @@
 	</div>
 	<script>
 		// Add event listener to form submission
-		document.getElementById("event-form").addEventListener("submit", function(event) {
-			event.preventDefault(); // prevent default form submission
-			var date = document.getElementById("event-date").value;
-			var title = document.getElementById("event-title").value;
-			var details = document.getElementById("event-details").value;
+		// Add event listener to form submission
+document.getElementById("event-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // prevent default form submission
+    var date = document.getElementById("event-date").value;
+    var title = document.getElementById("event-title").value;
+    var details = document.getElementById("event-details").value;
 
-			// Create a new table row for the event
-			var tableRow = document.createElement("tr");
-			var tableDataDate = document.createElement("td");
-			var tableDataTitle = document.createElement("td");
-			var tableDataDetails = document
-		}
+    // Create a new table row for the event
+    var tableRow = document.createElement("tr");
+    var tableDataDate = document.createElement("td");
+    var tableDataTitle = document.createElement("td");
+    var tableDataDetails = document.createElement("td"); // Create a new table data element
+    tableDataDate.innerHTML = date;
+    tableDataTitle.innerHTML = title;
+    tableDataDetails.innerHTML = details; // Set the innerHTML of the new table data element to the value of the "details" variable
+    tableRow.appendChild(tableDataDate);
+    tableRow.appendChild(tableDataTitle);
+    tableRow.appendChild(tableDataDetails);
+    document.getElementById("event-list").appendChild(tableRow);
+});

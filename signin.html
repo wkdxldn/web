@@ -8,10 +8,8 @@
 	<div class="container">
 		<h1>Sign Up</h1>
 		<form>
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required>
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required>
+			<label for="name">ID:</label>
+			<input type="text" id="id" name="id" required>
 			<label for="password">Password:</label>
 			<input type="password" id="password" name="password" required>
 			<label for="confirm-password">Confirm Password:</label>
@@ -39,12 +37,28 @@
                   appId: "1:802246162177:web:24804eaec8bca29bc30d00",
                   measurementId: "G-Z7D4CDWHWG"
                 };
+                document.getElementById('id').addEventListener('click', (event) =>{
+                        event.preventDefault()
+                        const id = document.getElementById('id').value;
+                        const password = document.getElementById('password').value;
+                        const auth = getAuth();
+                        signInAnonymously(auth)
+                                .then(() => {
+                                // Signed in..
+                        })
+                        .catch((error) => {
+                                alert('이미 있는 아이디');
+                                const errorCode = error.code;
+                                const errorMessage = error.message;
+                                // ...
+                        });  
+                })
               
                 // Initialize Firebase
                 const app = initializeApp(firebaseConfig);
                 const analytics = getAnalytics(app);
-
-                
-              </script>
+                import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+     
+        </script>
 </body>
 </html>
