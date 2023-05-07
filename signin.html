@@ -10,12 +10,12 @@
 	<div class="container">
 		<h1>Sign Up</h1>
 		<form>
-			<label for="name">ID:</label>
-			<input type="text" id="id" name="id" required>
+                        <label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
 			<label for="password">Password:</label>
 			<input type="password" id="password" name="password" required>
 			
-			<button type="submit" value="Sign Up" class="btn" id="btnm">
+			<input type="submit" value="Sign Up" class="btn" id="btnm">
 		</form>
 		<p>Already have an account? <a href="login.html">Log in</a></p>
 	</div>
@@ -103,28 +103,28 @@
 
 
                  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-                 
+
                 document.getElementById('btnm').addEventListener('click', (event) => {
                 event.preventDefault();
-                const id = document.getElementById('id').value;
+                const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
                 
                 
-                console.log(id);
+                console.log(email);
                 console.log(password);
 
                 
                 
                 const auth = getAuth();
 
-                createUserWithEmailAndPassword   (auth, id, password)
+                createUserWithEmailAndPassword   (auth, email, password)
                 .then((UserCredential) => {
                 console.log(UserCredential);
                 // Signed in..
                 const user=UserCredential.user;
                 })
                 .catch((error) => {
-                alert('에러');
+                alert('이 메일이 이미 있습니다.');
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // ...
@@ -139,6 +139,3 @@
 </html>
 
      
-
-       
-
