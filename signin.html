@@ -10,18 +10,18 @@
 	<div class="container">
 		<h1>Sign Up</h1>
 		<form>
-			<label for="name">ID:</label>
-			<input type="text" id="id" name="id" required>
+                        <label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
 			<label for="password">Password:</label>
 			<input type="password" id="password" name="password" required>
 			
-			<input type="submit" value="Sign Up" class="btn" id="btnm">
+			<button type="submit" value="Sign Up" class="btn" id="btnm">
 		</form>
 		<p>Already have an account? <a href="login.html">Log in</a></p>
 	</div>
         <script type="module">
 
-
+/*
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
@@ -47,7 +47,7 @@
 
       import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
-        const auth = getAuth();
+        
 
         
 
@@ -55,7 +55,7 @@
             event.preventDefault()
             const signUpid = document.getElementById('id').value
             const signUpPassword = document.getElementById('password').value
-
+            const auth = getAuth();
             createUserWithEmailAndPassword(auth, signUpid, signUpPassword)
                 .then((userCredential) => {
                     console.log(userCredential)
@@ -76,7 +76,7 @@
 
 
 
-                /*
+                */
                //Import the functions you need from the SDKs you need
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
                 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
@@ -102,20 +102,22 @@
                 
 
 
-                 
+                 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
                 document.getElementById('btnm').addEventListener('click', (event) => {
                 event.preventDefault();
-                const id = document.getElementById('id').value;
+                const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
                 
                 
-                console.log(id);
+                console.log(email);
                 console.log(password);
+
                 
                 
                 const auth = getAuth();
 
-                createUserWithEmailAndPassword   (auth, id, password)
+                createUserWithEmailAndPassword   (auth, email, password)
                 .then((UserCredential) => {
                 console.log(UserCredential);
                 // Signed in..
@@ -128,7 +130,7 @@
                 // ...
                 });  
         });
-        */
+
 
                 
      
