@@ -3,6 +3,8 @@
 <head>
 	<title>Sign Up</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/signin.css">
+        
+
 </head>
 <body>
 	<div class="container">
@@ -18,7 +20,63 @@
 		<p>Already have an account? <a href="login.html">Log in</a></p>
 	</div>
         <script type="module">
-                
+
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+                apiKey: "AIzaSyAfennP4eT8E8sZyVDTgcsVIxFrouusDlY",
+                authDomain: "gotlife-64aa0.firebaseapp.com",
+                databaseURL: "https://gotlife-64aa0-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "gotlife-64aa0",
+                storageBucket: "gotlife-64aa0.appspot.com",
+                messagingSenderId: "802246162177",
+                appId: "1:802246162177:web:24804eaec8bca29bc30d00",
+                measurementId: "G-Z7D4CDWHWG"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+        const auth = getAuth();
+
+        
+
+        document.getElementById('btnm').addEventListener('click', (event) => {
+            event.preventDefault()
+            const signUpid = document.getElementById('id').value
+            const signUpPassword = document.getElementById('password').value
+
+            createUserWithEmailAndPassword(auth, signUpid, signUpPassword)
+                .then((userCredential) => {
+                    console.log(userCredential)
+                    // Signed in
+                    const user = userCredential.user;
+                    // ...
+                })
+                .catch((error) => {
+                    console.log('error')
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                });
+
+        })
+
+
+
+
+
+                /*
                //Import the functions you need from the SDKs you need
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
                 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
@@ -44,29 +102,33 @@
                 
 
 
-                import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-                document.getElementById('btnm').addEventListener('click', (event) =>{
-                        event.preventDefault()
-                        const id = document.getElementById('id').value;
-                        const password = document.getElementById('password').value;
-                        const auth = getAuth();
-
-                        
-                        signInAnonymously(auth, id, password)
-                                .then((UserCredential) => {
-                                console.log(UserCredential);
-                                // Signed in..
-                                const user=UserCredential.user;
-                        })
-                        .catch((error) => {
-                                alert('에러');
-                                const errorCode = error.code;
-                                const errorMessage = error.message;
-                                // ...
-                        });  
-                })
+                 
+                document.getElementById('btnm').addEventListener('click', (event) => {
+                event.preventDefault();
+                const id = document.getElementById('id').value;
+                const password = document.getElementById('password').value;
+                
+                
                 console.log(id);
                 console.log(password);
+                
+                
+                const auth = getAuth();
+
+                createUserWithEmailAndPassword   (auth, id, password)
+                .then((UserCredential) => {
+                console.log(UserCredential);
+                // Signed in..
+                const user=UserCredential.user;
+                })
+                .catch((error) => {
+                alert('에러');
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ...
+                });  
+        });
+        */
 
                 
      
@@ -75,5 +137,6 @@
 </html>
 
      
+
        
 
