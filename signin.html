@@ -42,7 +42,7 @@
                         const id = document.getElementById('id').value;
                         const password = document.getElementById('password').value;
                         const auth = getAuth();
-                        signInAnonymously(auth)
+                        signInAnonymously(auth, id, password)
                                 .then(() => {
                                 // Signed in..
                         })
