@@ -10,8 +10,8 @@
 	<div class="container">
 		<h1>Sign Up</h1>
 		<form>
-                        <label for="email">Email:</label>
-			<input type="email" id="email" name="email" required>
+			<label for="name">ID:</label>
+			<input type="text" id="id" name="id" required>
 			<label for="password">Password:</label>
 			<input type="password" id="password" name="password" required>
 			
@@ -103,21 +103,21 @@
 
 
                  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-
+                 
                 document.getElementById('btnm').addEventListener('click', (event) => {
                 event.preventDefault();
-                const email = document.getElementById('email').value;
+                const id = document.getElementById('id').value;
                 const password = document.getElementById('password').value;
                 
                 
-                console.log(email);
+                console.log(id);
                 console.log(password);
 
                 
                 
                 const auth = getAuth();
 
-                createUserWithEmailAndPassword   (auth, email, password)
+                createUserWithEmailAndPassword   (auth, id, password)
                 .then((UserCredential) => {
                 console.log(UserCredential);
                 // Signed in..
