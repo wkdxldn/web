@@ -10,6 +10,8 @@
 	<div class="container">
 		<h1>Sign Up</h1>
 		<form>
+                        <label for="name">ID:</label>
+			<input type="text" id="id" name="id" required>
                         <label for="email">Email:</label>
 			<input type="email" id="email" name="email" required>
 			<label for="password">Password:</label>
@@ -20,63 +22,8 @@
 		<p>Already have an account? <a href="login.html">Log in</a></p>
 	</div>
         <script type="module">
+//어디감???????????ㅇ??ㅇ?ㅇ?ㅇ??ㅇ?ㅇ?ㅇ??ㅇ
 
-/*
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-                apiKey: "AIzaSyAfennP4eT8E8sZyVDTgcsVIxFrouusDlY",
-                authDomain: "gotlife-64aa0.firebaseapp.com",
-                databaseURL: "https://gotlife-64aa0-default-rtdb.asia-southeast1.firebasedatabase.app",
-                projectId: "gotlife-64aa0",
-                storageBucket: "gotlife-64aa0.appspot.com",
-                messagingSenderId: "802246162177",
-                appId: "1:802246162177:web:24804eaec8bca29bc30d00",
-                measurementId: "G-Z7D4CDWHWG"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-
-      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
-
-        
-
-        
-
-        document.getElementById('btnm').addEventListener('click', (event) => {
-            event.preventDefault()
-            const signUpid = document.getElementById('id').value
-            const signUpPassword = document.getElementById('password').value
-            const auth = getAuth();
-            createUserWithEmailAndPassword(auth, signUpid, signUpPassword)
-                .then((userCredential) => {
-                    console.log(userCredential)
-                    // Signed in
-                    const user = userCredential.user;
-                    // ...
-                })
-                .catch((error) => {
-                    console.log('error')
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    // ..
-                });
-
-        })
-
-
-
-
-
-                */
                //Import the functions you need from the SDKs you need
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
                 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
@@ -108,7 +55,7 @@
                 event.preventDefault();
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
-                
+                const id = document.getElementById('id').value;
                 
                 console.log(email);
                 console.log(password);
@@ -121,6 +68,8 @@
                 .then((UserCredential) => {
                 console.log(UserCredential);
                 // Signed in..
+                // 다음 페이지
+                location.href = 'calender.html';
                 const user=UserCredential.user;
                 })
                 .catch((error) => {
@@ -132,7 +81,8 @@
         });
 
 
-                
+                //로그인,상호작용,캘린더
+        
      
         </script>
 </body>

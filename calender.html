@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
 	<title>Calendar</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+	<link rel="stylesheet" href="/assets/css/nav.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
@@ -71,9 +72,45 @@
 				}
 			});
 		});
+		var navbar = document.getElementById("navbar");
+
+document.addEventListener("mousemove", function(event) {
+  var posY = event.clientY;
+  navbar.style.top = posY + "px";
+});
+
 	</script>
-</head>
-<body>
+  </head>
+  <body>
+	<nav id="navbar">
+		<ul>
+		  <li><a href="#">menu1</a></li>
+		  <li><a href="#">menu2</a></li>
+		  <li><a href="#">menu3</a></li>
+		  <li><a href="#">menu4</a></li>
+		  <li><a href="#">menu5</a></li>
+		</ul>
+	  </nav>
+	  
 	<div id="calendar"></div>
-</body>
+
+
+    <h1>Habit Tracker</h1>
+    <div class="calendar">
+      <div class="month">
+       
+	  
+       
+      </ul>
+    </div>
+    <div class="habits">
+      <h2>My Habits</h2>
+      <ul>
+        <li><input type="checkbox"> Exercise for 30 minutes</li>
+        <li><input type="checkbox"> Read for 20 minutes</li>
+        <li><input type="checkbox"> Meditate for 10 minutes</li>
+      </ul>
+    </div>
+    <script src="/assets/js/calender.js"></script>
+  </body>
 </html>

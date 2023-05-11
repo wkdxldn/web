@@ -8,15 +8,35 @@
     <div class="login-wrapper">
         <h2>Login</h2>
         <form method="post" action="https://gotlife-64aa0-default-rtdb.asia-southeast1.firebasedatabase.app/login" id="login-form">
-            <input type="text" name="userName" placeholder="Email">
-            <input type="password" name="userPassword" placeholder="Password">
+            <input type="text" name="userName" placeholder="Email" id="id">
+            <input type="password" name="userPassword" placeholder="Password" id="pass">
             <label for="remember-check">
                 <input type="checkbox" id="remember-check">아이디 저장하기
             </label>
             <input type="submit" value="Login">
-            <li><a href="calender.html" class="button">login</a></li>
+            <li><a href="calender.html" class="button" id="login">login</a></li>
         </form>
     </div>
+    <script>
+        import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+        document.getElementById('login').addEventListener('click', (event) => {
+            event.preventDefault();
+            const email = document.getElementById('id').value;
+            const password = document.getElementById('pass').value;
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+        })
+    </script>
 </body>
 </html>
 
